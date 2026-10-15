@@ -1,279 +1,1186 @@
-a<!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#f5f7ff">
 <title>NV Quick Help — Your Everyday Resource Hub</title>
+
 <style>
-:root{--ink:#17223b;--muted:#65718a;--line:#e5eaf4;--paper:#fff;--bg:#f5f7fc;--blue:#315bea;--violet:#7357e8;--mint:#dff8ee;--shadow:0 16px 45px rgba(28,45,91,.09)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 85% 0%,#e9e8ff 0,transparent 27rem),var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}a{color:inherit}.topbar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.84);backdrop-filter:blur(16px);border-bottom:1px solid #e8ecf5}.nav{max-width:1200px;margin:auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-weight:850;letter-spacing:-.5px;font-size:19px}.brandmark{width:38px;height:38px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(135deg,var(--blue),var(--violet));color:white;box-shadow:0 7px 18px #554be744}.brand small{display:block;font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:#7d88a1;font-weight:750;margin-top:1px}.navlink{font-size:13px;text-decoration:none;color:#52617b;font-weight:700}.navlink:hover{color:var(--blue)}main{max-width:1200px;margin:auto;padding:34px 24px 64px}.hero{position:relative;overflow:hidden;padding:clamp(28px,5vw,58px);border-radius:30px;background:linear-gradient(120deg,#152a58 0%,#303f94 55%,#6551ce 100%);color:#fff;box-shadow:0 24px 60px #293b8d30}.hero:before,.hero:after{content:"";position:absolute;border:1px solid #ffffff22;border-radius:50%;pointer-events:none}.hero:before{width:380px;height:380px;right:-95px;top:-190px}.hero:after{width:250px;height:250px;right:55px;bottom:-190px}.eyebrow{display:inline-flex;gap:8px;align-items:center;padding:7px 11px;border-radius:999px;background:#ffffff19;border:1px solid #ffffff2b;color:#e1e6ff;font-size:11px;font-weight:800;letter-spacing:1.3px;text-transform:uppercase}.hero h1{font-size:clamp(36px,6vw,64px);letter-spacing:-2.5px;line-height:1.02;margin:22px 0 14px;max-width:650px}.hero p{color:#d9e1ff;line-height:1.7;max-width:610px;margin:0;font-size:16px}.hero-bottom{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:28px}.stat{padding:10px 14px;border:1px solid #ffffff2c;background:#ffffff12;border-radius:13px;font-size:12px;color:#e6eaff}.stat b{color:white;font-size:15px;margin-right:5px}.searchbox{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:7px 8px 7px 17px;box-shadow:var(--shadow);margin:25px 0 18px}.searchbox .mag{font-size:22px;color:#71809c}.searchbox input{min-width:0;flex:1;border:0;outline:0;background:transparent;font:inherit;font-size:15px;padding:12px 0;color:var(--ink)}.shortcut{font-size:11px;color:#8590a5;background:#f4f6fb;border:1px solid #e7ebf4;padding:6px 8px;border-radius:8px;white-space:nowrap}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:20px 2px}.toolbar h2{font-size:19px;letter-spacing:-.5px;margin:0}.toolbar p{font-size:12px;color:var(--muted);margin:5px 0 0}.filterrow{display:flex;gap:8px;overflow:auto;padding:2px 0 7px;margin-bottom:18px}.filter{flex:0 0 auto;border:1px solid #e1e7f2;background:#fff;color:#586680;padding:9px 13px;border-radius:999px;font:inherit;font-size:12px;font-weight:750;cursor:pointer}.filter.active,.filter:hover{background:#e9edff;color:#284bd2;border-color:#cbd4ff}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.category{background:rgba(255,255,255,.93);border:1px solid var(--line);border-radius:21px;padding:20px;box-shadow:0 7px 22px #172a4d08;transition:transform .2s,box-shadow .2s,border-color .2s;min-width:0}.category:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:#d3dcff}.cathead{display:flex;align-items:flex-start;gap:13px}.caticon{width:48px;height:48px;flex:0 0 48px;display:grid;place-items:center;border-radius:16px;background:var(--tint,#edf1ff);font-size:23px}.cathead h3{margin:2px 0 5px;font-size:16px;letter-spacing:-.35px;overflow-wrap:anywhere}.cathead p{margin:0;color:var(--muted);font-size:12px;line-height:1.45}.count{margin-left:auto;white-space:nowrap;border-radius:999px;background:#f2f4f9;padding:5px 8px;font-size:10px;font-weight:800;color:#69758d}.items{border-top:1px solid #edf0f6;margin-top:17px;padding-top:7px}.item{border-bottom:1px solid #f0f2f7}.item:last-child{border-bottom:0}.item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 1px;font-size:13px;font-weight:680;line-height:1.4}.item summary::-webkit-details-marker{display:none}.item summary:after{content:"＋";font-size:16px;color:#8590a8;font-weight:500}.item[open] summary:after{content:"−"}.itembody{padding:0 0 13px;color:#66728a;font-size:12px;line-height:1.65}.itembody p{margin:3px 0}.itembody a{display:inline-flex;align-items:center;margin:5px 5px 0 0;text-decoration:none;color:#3154d7;background:#eef1ff;border-radius:8px;padding:7px 9px;font-weight:750;font-size:11px}.itembody a:hover{background:#dfe5ff}.empty{display:none;text-align:center;padding:48px 20px;background:#fff;border:1px dashed #d4dbea;border-radius:20px;color:var(--muted)}.empty strong{display:block;color:var(--ink);font-size:18px;margin-bottom:7px}.notice{margin-top:22px;padding:14px 16px;border-radius:14px;background:#fff8e9;border:1px solid #f2e3bd;color:#7b612a;font-size:12px;line-height:1.6}.footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:25px 2px 0;color:#7a859b;font-size:11px}.topbtn{position:fixed;right:20px;bottom:20px;width:44px;height:44px;border:0;border-radius:15px;background:#253c9e;color:white;font-size:20px;box-shadow:0 10px 25px #253c9e45;cursor:pointer;display:none}.topbtn.show{display:block}.hidden{display:none!important}.live-status{font-size:11px;font-weight:800;padding:8px 11px;border-radius:999px;white-space:nowrap}.live-status.online{color:#16734b;background:#e4f8ee}.live-status.offline{color:#896321;background:#fff4d8}
-@media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero h1{letter-spacing:-1.8px}}
-@media(max-width:600px){.nav{padding:12px 16px}.navlink{display:none}main{padding:20px 14px 44px}.hero{border-radius:23px;padding:28px 23px}.hero h1{font-size:43px}.hero p{font-size:14px}.grid{grid-template-columns:1fr;gap:12px}.category{padding:17px}.searchbox{margin-top:18px}.shortcut{display:none}.toolbar{align-items:flex-start}.stat{padding:8px 10px}.hero-bottom{gap:8px}}
+:root {
+  --ink: #17223b;
+  --muted: #65718a;
+  --line: #e5eaf4;
+  --bg: #f5f7fc;
+  --blue: #315bea;
+  --violet: #7357e8;
+  --shadow: 0 16px 45px rgba(28,45,91,.09);
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 85% 0%, #e9e8ff 0, transparent 27rem),
+    var(--bg);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+}
+
+a { color: inherit; }
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(255,255,255,.88);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid #e8ecf5;
+}
+
+.nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  font-weight: 850;
+  letter-spacing: -.5px;
+  font-size: 19px;
+}
+
+.brandmark {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: linear-gradient(135deg,var(--blue),var(--violet));
+  color: white;
+  box-shadow: 0 7px 18px #554be744;
+}
+
+.brand small {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: #7d88a1;
+  font-weight: 750;
+  margin-top: 2px;
+}
+
+.navlink {
+  font-size: 13px;
+  text-decoration: none;
+  color: #52617b;
+  font-weight: 700;
+}
+
+.navlink:hover { color: var(--blue); }
+
+main {
+  max-width: 1200px;
+  margin: auto;
+  padding: 34px 24px 64px;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(28px,5vw,58px);
+  border-radius: 30px;
+  background: linear-gradient(
+    120deg,#152a58 0%,#303f94 55%,#6551ce 100%
+  );
+  color: #fff;
+  box-shadow: 0 24px 60px #293b8d30;
+}
+
+.hero:before,
+.hero:after {
+  content: "";
+  position: absolute;
+  border: 1px solid #ffffff22;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero:before {
+  width: 380px;
+  height: 380px;
+  right: -95px;
+  top: -190px;
+}
+
+.hero:after {
+  width: 250px;
+  height: 250px;
+  right: 55px;
+  bottom: -190px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #ffffff19;
+  border: 1px solid #ffffff2b;
+  color: #e1e6ff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-size: clamp(36px,6vw,64px);
+  letter-spacing: -2.5px;
+  line-height: 1.02;
+  margin: 22px 0 14px;
+  max-width: 650px;
+}
+
+.hero p {
+  color: #d9e1ff;
+  line-height: 1.7;
+  max-width: 610px;
+  margin: 0;
+  font-size: 16px;
+}
+
+.hero-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.stat {
+  padding: 10px 14px;
+  border: 1px solid #ffffff2c;
+  background: #ffffff12;
+  border-radius: 13px;
+  font-size: 12px;
+  color: #e6eaff;
+}
+
+.stat b {
+  color: white;
+  font-size: 15px;
+  margin-right: 5px;
+}
+
+.searchbox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 7px 8px 7px 17px;
+  box-shadow: var(--shadow);
+  margin: 25px 0 18px;
+}
+
+.searchbox .mag {
+  font-size: 22px;
+  color: #71809c;
+}
+
+.searchbox input {
+  min-width: 0;
+  flex: 1;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 15px;
+  padding: 12px 0;
+  color: var(--ink);
+}
+
+.shortcut {
+  font-size: 11px;
+  color: #8590a5;
+  background: #f4f6fb;
+  border: 1px solid #e7ebf4;
+  padding: 6px 8px;
+  border-radius: 8px;
+  white-space: nowrap;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 20px 2px;
+}
+
+.toolbar h2 {
+  font-size: 19px;
+  letter-spacing: -.5px;
+  margin: 0;
+}
+
+.toolbar p {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 5px 0 0;
+}
+
+.filterrow {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 2px 0 10px;
+  margin-bottom: 18px;
+}
+
+.filter {
+  flex: 0 0 auto;
+  border: 1px solid #e1e7f2;
+  background: #fff;
+  color: #586680;
+  padding: 9px 13px;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.filter.active,
+.filter:hover {
+  background: #e9edff;
+  color: #284bd2;
+  border-color: #cbd4ff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 16px;
+}
+
+.category {
+  background: rgba(255,255,255,.95);
+  border: 1px solid var(--line);
+  border-radius: 21px;
+  padding: 20px;
+  box-shadow: 0 7px 22px #172a4d08;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+  min-width: 0;
+}
+
+.category:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: #d3dcff;
+}
+
+.cathead {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+}
+
+.caticon {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: var(--tint,#edf1ff);
+  font-size: 23px;
+}
+
+.cathead h3 {
+  margin: 2px 0 5px;
+  font-size: 16px;
+  letter-spacing: -.35px;
+  overflow-wrap: anywhere;
+}
+
+.cathead p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.count {
+  margin-left: auto;
+  white-space: nowrap;
+  border-radius: 999px;
+  background: #f2f4f9;
+  padding: 5px 8px;
+  font-size: 10px;
+  font-weight: 800;
+  color: #69758d;
+}
+
+.items {
+  border-top: 1px solid #edf0f6;
+  margin-top: 17px;
+  padding-top: 7px;
+}
+
+.item { border-bottom: 1px solid #f0f2f7; }
+.item:last-child { border-bottom: 0; }
+
+.item summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 11px 1px;
+  font-size: 13px;
+  font-weight: 680;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.item summary::-webkit-details-marker { display: none; }
+
+.item summary:after {
+  content: "＋";
+  flex-shrink: 0;
+  font-size: 16px;
+  color: #8590a8;
+  font-weight: 500;
+}
+
+.item[open] summary:after { content: "−"; }
+
+.itembody {
+  padding: 0 0 13px;
+  color: #66728a;
+  font-size: 12px;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.itembody p { margin: 5px 0; }
+
+.itembody strong { color: #35415a; }
+
+.itembody a {
+  display: inline-flex;
+  align-items: center;
+  margin: 6px 5px 0 0;
+  text-decoration: none;
+  color: #3154d7;
+  background: #eef1ff;
+  border-radius: 8px;
+  padding: 7px 9px;
+  font-weight: 750;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+.itembody a:hover { background: #dfe5ff; }
+
+.empty {
+  display: none;
+  text-align: center;
+  padding: 48px 20px;
+  background: #fff;
+  border: 1px dashed #d4dbea;
+  border-radius: 20px;
+  color: var(--muted);
+}
+
+.empty strong {
+  display: block;
+  color: var(--ink);
+  font-size: 18px;
+  margin-bottom: 7px;
+}
+
+.notice {
+  margin-top: 22px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #fff8e9;
+  border: 1px solid #f2e3bd;
+  color: #7b612a;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 25px 2px 0;
+  color: #7a859b;
+  font-size: 11px;
+}
+
+.topbtn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 15px;
+  background: #253c9e;
+  color: white;
+  font-size: 20px;
+  box-shadow: 0 10px 25px #253c9e45;
+  cursor: pointer;
+  display: none;
+}
+
+.topbtn.show { display: block; }
+
+.live-status {
+  font-size: 11px;
+  font-weight: 800;
+  padding: 8px 11px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.live-status.online {
+  color: #16734b;
+  background: #e4f8ee;
+}
+
+.live-status.offline {
+  color: #896321;
+  background: #fff4d8;
+}
+
+.loading {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 45px 20px;
+  color: var(--muted);
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+}
+
+@media(max-width:900px) {
+  .grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .hero h1 { letter-spacing: -1.8px; }
+}
+
+@media(max-width:600px) {
+  .nav { padding: 12px 16px; }
+  .navlink { display: none; }
+  main { padding: 20px 14px 44px; }
+  .hero { border-radius: 23px; padding: 28px 23px; }
+  .hero h1 { font-size: 43px; }
+  .hero p { font-size: 14px; }
+  .grid { grid-template-columns: 1fr; gap: 12px; }
+  .category { padding: 17px; }
+  .searchbox { margin-top: 18px; }
+  .shortcut { display: none; }
+  .toolbar { align-items: flex-start; flex-direction: column; }
+  .stat { padding: 8px 10px; }
+  .hero-bottom { gap: 8px; }
+}
 </style>
 </head>
+
 <body>
-<header class="topbar"><nav class="nav"><a class="brand" href="#" aria-label="NV Quick Help home"><span class="brandmark">NV</span><span>NV Quick Help<small>Everyday resource hub</small></span></a><a class="navlink" href="#directory">Explore directory ↓</a></nav></header>
+
+<header class="topbar">
+  <nav class="nav">
+    <a class="brand" href="#" aria-label="NV Quick Help home">
+      <span class="brandmark">NV</span>
+      <span>
+        NV Quick Help
+        <small>Everyday resource hub</small>
+      </span>
+    </a>
+    <a class="navlink" href="#directory">Explore directory ↓</a>
+  </nav>
+</header>
+
 <main>
-<section class="hero">
- <span class="eyebrow">✦ Your handy directory</span>
- <h1>Help for everyday<br>life, all in one place.</h1>
- <p>Find useful services, travel resources, public contacts and local help quickly. Search by category or open a topic to see its available details.</p>
- <div class="hero-bottom"><span class="stat"><b id="categoryCount">10</b> categories</span><span class="stat"><b id="topicCount">—</b> topics</span><span class="stat">⌕ Search across the directory</span></div>
-</section>
-<div class="searchbox" role="search"><span class="mag">⌕</span><input id="search" type="search" placeholder="Search hospitals, electricians, train status…" autocomplete="off" aria-label="Search directory"><span class="shortcut">Type to search</span></div>
-<div class="toolbar" id="directory"><div><h2>Explore the directory</h2><p id="resultText">Browse topics grouped by category.</p></div><span id="liveStatus" class="live-status">↻ Connecting to Google Sheets…</span></div>
-<div class="filterrow" id="filters" aria-label="Category filters"></div>
-<div class="grid" id="grid"></div>
-<div class="empty" id="empty"><strong>No matching topics found</strong>Try another keyword or choose a different category.</div>
-<div class="notice"><strong>About this directory:</strong> Directory data is loaded from the published Google Sheet when available. If the sheet cannot be reached, the website falls back to its built-in directory. Missing contact information is not invented. Verify emergency numbers and service details before relying on them.</div>
-<footer class="footer"><span>© <span id="year"></span> NV Quick Help</span><span>Designed to be simple, useful and mobile-friendly.</span></footer>
+
+  <section class="hero">
+    <span class="eyebrow">✦ Your handy directory</span>
+
+    <h1>Help for everyday<br>life, all in one place.</h1>
+
+    <p>
+      Find useful services, contacts and resources quickly.
+      Search across your workbook and explore information
+      grouped by worksheet.
+    </p>
+
+    <div class="hero-bottom">
+      <span class="stat"><b id="categoryCount">—</b> categories</span>
+      <span class="stat"><b id="topicCount">—</b> topics</span>
+      <span class="stat">⌕ Search the directory</span>
+    </div>
+  </section>
+
+  <div class="searchbox" role="search">
+    <span class="mag">⌕</span>
+    <input
+      id="search"
+      type="search"
+      placeholder="Search services, contacts, locations…"
+      autocomplete="off"
+      aria-label="Search directory"
+    >
+    <span class="shortcut">Type to search</span>
+  </div>
+
+  <div class="toolbar" id="directory">
+    <div>
+      <h2>Explore the directory</h2>
+      <p id="resultText">Loading workbook data…</p>
+    </div>
+
+    <span id="liveStatus" class="live-status">
+      ↻ Connecting to Google Sheets…
+    </span>
+  </div>
+
+  <div id="filters" class="filterrow" aria-label="Category filters"></div>
+
+  <div class="grid" id="grid">
+    <div class="loading">Loading your directory…</div>
+  </div>
+
+  <div class="empty" id="empty">
+    <strong>No matching topics found</strong>
+    Try another keyword or choose a different category.
+  </div>
+
+  <div class="notice">
+    <strong>Live directory:</strong>
+    Data is loaded from your Google Sheets workbook through Google Apps Script.
+    Every worksheet is included. Verify contact details and emergency information
+    before relying on them. Do not publish sensitive personal information.
+  </div>
+
+  <footer class="footer">
+    <span>© <span id="year"></span> NV Quick Help</span>
+    <span>Designed to be simple, useful and mobile-friendly.</span>
+  </footer>
+
 </main>
-<button class="topbtn" id="topbtn" aria-label="Back to top" title="Back to top">↑</button>
+
+<button class="topbtn" id="topbtn" aria-label="Back to top" title="Back to top">
+  ↑
+</button>
+
 <script>
-const DIRECTORY = {"Home Services": [{"title": "Electricians", "sheet": "Home Services"}, {"title": "Plumbers", "sheet": "Home Services"}, {"title": "Masons", "sheet": "Home Services"}, {"title": "Carpenters", "sheet": "Home Services"}, {"title": "Painters", "sheet": "Home Services"}, {"title": "Tile workers", "sheet": "Home Services"}, {"title": "Welders", "sheet": "Home Services"}, {"title": "AC repair", "sheet": "Home Services"}, {"title": "Appliance repair", "sheet": "Home Services"}, {"title": "Pest control", "sheet": "Home Services"}, {"title": "House cleaning", "sheet": "Home Services"}, {"title": "Internet and broadband", "sheet": "Home Services"}, {"title": "Water can delivery", "sheet": "Home Services"}, {"title": "Packers and movers", "sheet": "Home Services"}, {"title": "Furniture assembly and repair", "sheet": "Home Services"}, {"title": "Flower Shop", "sheet": "Home Services"}, {"title": "Decoration", "sheet": "Home Services"}, {"title": "Courier", "sheet": "Home Services"}], "EmergencyContacts": [{"title": "Police", "sheet": "Emergency Contacts"}, {"title": "Ambulance", "sheet": "Emergency Contacts"}, {"title": "Fire & Rescue", "sheet": "Emergency Contacts"}, {"title": "Women's helpline", "sheet": "Emergency Contacts"}, {"title": "Child helpline", "sheet": "Emergency Contacts"}, {"title": "Disaster management", "sheet": "Emergency Contacts"}, {"title": "Railway security", "sheet": "Emergency Contacts"}, {"title": "Road accident assistance", "sheet": "Emergency Contacts"}, {"title": "Poison information services", "sheet": "Emergency Contacts"}, {"title": "Electricity emergency", "sheet": "Emergency Contacts"}, {"title": "Gas leak emergency", "sheet": "Emergency Contacts"}, {"title": "Roadside breakdown assistance", "sheet": "Emergency Contacts"}], "Hospitals & Clinics": [{"title": "General hospitals", "sheet": "Hospitals & Clinics", "location": "Tirupattur"}, {"title": "Skin / Dermatology", "sheet": "Hospitals & Clinics"}, {"title": "Children's hospitals / Paediatrics", "sheet": "Hospitals & Clinics"}, {"title": "Women's healthcare / Gynaecology", "sheet": "Hospitals & Clinics"}, {"title": "Dental clinics", "sheet": "Hospitals & Clinics"}, {"title": "Multispecialty hospitals", "sheet": "Hospitals & Clinics"}, {"title": "Eye hospitals", "sheet": "Hospitals & Clinics"}, {"title": "ENT clinics", "sheet": "Hospitals & Clinics"}, {"title": "Orthopaedic clinics", "sheet": "Hospitals & Clinics"}, {"title": "Physiotherapy centres", "sheet": "Hospitals & Clinics"}, {"title": "Diagnostic labs", "sheet": "Hospitals & Clinics"}, {"title": "Scanning centres", "sheet": "Hospitals & Clinics"}, {"title": "Pharmacies", "sheet": "Hospitals & Clinics"}], "VehicleHelp": [{"title": "Car mechanics", "sheet": "Vehicle Help"}, {"title": "Bike mechanics", "sheet": "Vehicle Help"}, {"title": "Puncture repair", "sheet": "Vehicle Help"}, {"title": "Towing services", "sheet": "Vehicle Help"}, {"title": "Battery jump-start", "sheet": "Vehicle Help"}, {"title": "Vehicle breakdown assistance", "sheet": "Vehicle Help"}, {"title": "Car washing", "sheet": "Vehicle Help"}, {"title": "Vehicle servicing", "sheet": "Vehicle Help"}, {"title": "Spare parts shops", "sheet": "Vehicle Help"}, {"title": "EV charging stations", "sheet": "Vehicle Help"}], "Automobile Services": [{"title": "New bike showrooms", "sheet": "Automobile Services"}, {"title": "New scooter showrooms", "sheet": "Automobile Services"}, {"title": "Used two-wheeler dealers", "sheet": "Automobile Services"}, {"title": "Authorized service centres", "sheet": "Automobile Services"}, {"title": "Private bike workshops", "sheet": "Automobile Services"}, {"title": "Private scooter workshops", "sheet": "Automobile Services"}, {"title": "Bike washing and detailing", "sheet": "Automobile Services"}, {"title": "Two-wheeler spare parts", "sheet": "Automobile Services"}, {"title": "Two-wheeler accessories", "sheet": "Automobile Services"}, {"title": "New car showrooms", "sheet": "Automobile Services"}, {"title": "Used car dealers", "sheet": "Automobile Services"}, {"title": "Private car workshops", "sheet": "Automobile Services"}, {"title": "Car washing and detailing", "sheet": "Automobile Services"}, {"title": "Car AC repair", "sheet": "Automobile Services"}, {"title": "Car electrical repair", "sheet": "Automobile Services"}, {"title": "Car spare parts", "sheet": "Automobile Services"}, {"title": "Car accessories", "sheet": "Automobile Services"}, {"title": "Commercial vehicle dealers", "sheet": "Automobile Services"}, {"title": "Commercial vehicle service", "sheet": "Automobile Services"}, {"title": "Tractor showrooms", "sheet": "Automobile Services"}, {"title": "Tractor service", "sheet": "Automobile Services"}, {"title": "Electric vehicle dealers", "sheet": "Automobile Services"}, {"title": "Electric vehicle service", "sheet": "Automobile Services"}, {"title": "Tyre shops", "sheet": "Automobile Services"}, {"title": "Wheel alignment", "sheet": "Automobile Services"}, {"title": "Battery shops", "sheet": "Automobile Services"}, {"title": "Denting", "sheet": "Automobile Services"}, {"title": "Painting", "sheet": "Automobile Services"}, {"title": "Body repair", "sheet": "Automobile Services"}, {"title": "Insurance assistance", "sheet": "Automobile Services"}, {"title": "Registration assistance", "sheet": "Automobile Services"}, {"title": "EV charging stations", "sheet": "Automobile Services"}], "Travel": [{"title": "Cab services", "sheet": "Roadways"}, {"title": "Taxi services", "sheet": "Roadways"}, {"title": "Auto-rickshaws", "sheet": "Roadways"}, {"title": "Government buses", "sheet": "Roadways"}, {"title": "Private buses", "sheet": "Roadways"}, {"title": "Mini buses", "sheet": "Roadways"}, {"title": "Van rentals", "sheet": "Roadways"}, {"title": "School transport", "sheet": "Roadways"}, {"title": "Office transport", "sheet": "Roadways"}, {"title": "Outstation taxis", "sheet": "Roadways"}], "Railways": [{"title": "Railway enquiry and station contacts", "sheet": "Railways"}, {"title": "Train schedules and running status", "sheet": "Railways"}, {"title": "PNR status", "sheet": "Railways"}, {"title": "Railway security and assistance", "sheet": "Railways"}, {"title": "Ticket booking links", "sheet": "Railways"}, {"title": "Ticket cancellation links", "sheet": "Railways"}], "Travel, Food & Stay": [{"title": "Restaurants", "sheet": "Travel, Food & Stay"}, {"title": "Vegetarian restaurants", "sheet": "Travel, Food & Stay"}, {"title": "Non Vegetarian restaurants", "sheet": "Travel, Food & Stay"}, {"title": "Family restaurants", "sheet": "Travel, Food & Stay"}, {"title": "Food delivery services", "sheet": "Travel, Food & Stay"}, {"title": "Hotels", "sheet": "Travel, Food & Stay"}, {"title": "Lodges", "sheet": "Travel, Food & Stay"}, {"title": "Budget accommodation", "sheet": "Travel, Food & Stay"}, {"title": "Tourist accommodation", "sheet": "Travel, Food & Stay"}, {"title": "Travel Agency", "sheet": "Travel, Food & Stay"}], "Electricity": [{"title": "TNEB / electricity office", "sheet": "Electricity"}, {"title": "Power-cut complaints", "sheet": "Electricity"}, {"title": "Electricity billing", "sheet": "Electricity"}, {"title": "New connection enquiries", "sheet": "Electricity"}, {"title": "Local electrical service providers", "sheet": "Electricity"}], "Public Services": [{"title": "Collectorate", "sheet": "Public Services"}, {"title": "Municipality", "sheet": "Public Services"}, {"title": "Government hospitals", "sheet": "Public Services"}, {"title": "Electricity board", "sheet": "Public Services"}, {"title": "Water supply", "sheet": "Public Services"}, {"title": "RTO", "sheet": "Public Services"}, {"title": "Passport services", "sheet": "Public Services"}, {"title": "Post office", "sheet": "Public Services"}, {"title": "Aadhaar services", "sheet": "Public Services"}, {"title": "Government service portals", "sheet": "Public Services"}]};
+"use strict";
+
+/* ---------------------------------------------------------
+   GOOGLE APPS SCRIPT API
+   Reads all worksheet tabs from your Google Sheets workbook.
+--------------------------------------------------------- */
+
+const API_URL =
+  "https://script.google.com/macros/s/AKfycbyG0FoTP3QU7of2NEgZxGkAy526WuBeS8cHo6-9gHL9_GolAI0JcpQ8IKKbQrddhPeg/exec";
+
+/* ---------------------------------------------------------
+   CATEGORY APPEARANCE
+--------------------------------------------------------- */
+
 const META = {
- "Home Services":{icon:"🛠️",tint:"#e4f8ef",desc:"Find help for repairs and household tasks."},
- "EmergencyContacts":{label:"Emergency Contacts",icon:"🚨",tint:"#fff0ed",desc:"Important emergency and assistance topics."},
- "Hospitals & Clinics":{icon:"🏥",tint:"#e8f2ff",desc:"Healthcare and diagnostic services."},
- "VehicleHelp":{label:"Vehicle Help",icon:"🚗",tint:"#fff3dc",desc:"Breakdown, repair and roadside assistance."},
- "Automobile Services":{icon:"🛵",tint:"#eee9ff",desc:"Two-wheeler, four-wheeler and related services."},
- "Travel":{icon:"🧳",tint:"#e5f6ff",desc:"Travel categories and transport options."},
- "Railways":{icon:"🚆",tint:"#e4f8ef",desc:"Railway information and booking resources."},
- "Travel, Food & Stay":{icon:"🍽️",tint:"#fff0e5",desc:"Food, accommodation and trip planning."},
- "Electricity":{icon:"⚡",tint:"#fff7d9",desc:"Electricity services, billing and complaints."},
- "Public Services":{icon:"🏛️",tint:"#e8edff",desc:"Government and essential public services."}
+  "Home Services": {
+    icon: "🛠️",
+    tint: "#e4f8ef",
+    desc: "Household services and repairs."
+  },
+  "Emergency Contacts": {
+    icon: "🚨",
+    tint: "#fff0ed",
+    desc: "Emergency contacts and assistance."
+  },
+  "EmergencyContacts": {
+    label: "Emergency Contacts",
+    icon: "🚨",
+    tint: "#fff0ed",
+    desc: "Emergency contacts and assistance."
+  },
+  "Hospitals & Clinics": {
+    icon: "🏥",
+    tint: "#e8f2ff",
+    desc: "Healthcare and medical services."
+  },
+  "Vehicle Help": {
+    icon: "🚗",
+    tint: "#fff3dc",
+    desc: "Vehicle repair and roadside help."
+  },
+  "VehicleHelp": {
+    label: "Vehicle Help",
+    icon: "🚗",
+    tint: "#fff3dc",
+    desc: "Vehicle repair and roadside help."
+  },
+  "Automobile Services": {
+    icon: "🛵",
+    tint: "#eee9ff",
+    desc: "Automobile dealers and services."
+  },
+  "Travel": {
+    icon: "🧳",
+    tint: "#e5f6ff",
+    desc: "Transport and travel resources."
+  },
+  "Roadways": {
+    icon: "🚌",
+    tint: "#e5f6ff",
+    desc: "Road transport information."
+  },
+  "Railways": {
+    icon: "🚆",
+    tint: "#e4f8ef",
+    desc: "Railway information and resources."
+  },
+  "Travel, Food & Stay": {
+    icon: "🍽️",
+    tint: "#fff0e5",
+    desc: "Food, accommodation and travel."
+  },
+  "Electricity": {
+    icon: "⚡",
+    tint: "#fff7d9",
+    desc: "Electricity services and complaints."
+  },
+  "Public Services": {
+    icon: "🏛️",
+    tint: "#e8edff",
+    desc: "Government and public services."
+  }
 };
-const clean=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-let entries=Object.entries(DIRECTORY);
-let allTopics=entries.reduce((n,[,items])=>n+items.length,0);
-document.getElementById("categoryCount").textContent=entries.length;
-document.getElementById("topicCount").textContent=allTopics;
-document.getElementById("year").textContent=new Date().getFullYear();
-let active="All";
-const filters=document.getElementById("filters");
-const grid=document.getElementById("grid");
-const search=document.getElementById("search");
-function makeFilters(){
- filters.innerHTML="";
- ["All",...entries.map(([key])=>key)].forEach(key=>{
-  const b=document.createElement("button");b.className="filter"+(active===key?" active":"");
-  b.textContent=key==="All"?"All categories":(META[key]?.label||key);
-  b.onclick=()=>{active=key;
-// LIVE GOOGLE SHEETS DATA
-// Published Google Sheet CSV endpoint. Keep the sheet published for read access.
-const PUBLISHED_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQuNNBgqHDjnnzWRAdVZF61-eB9exwadGqMPwxU12EJgGcQMC7Kk8sUZx4mgHIL5Leb4vGlZboetfLz/pub?output=csv";
 
-function parseCSV(text){
-  const rows=[]; let row=[], cell="", quoted=false;
-  for(let i=0;i<text.length;i++){
-    const c=text[i], next=text[i+1];
-    if(c==='"' && quoted && next==='"'){cell+='"';i++;}
-    else if(c==='"'){quoted=!quoted;}
-    else if(c===','&&!quoted){row.push(cell);cell="";}
-    else if((c==='\n'||c==='\r')&&!quoted){
-      if(c==='\r'&&next==='\n')i++;
-      row.push(cell); if(row.some(v=>String(v).trim()!==""))rows.push(row);
-      row=[];cell="";
-    } else cell+=c;
-  }
-  if(cell.length||row.length){row.push(cell);rows.push(row);}
-  return rows;
+/* ---------------------------------------------------------
+   APPLICATION STATE
+--------------------------------------------------------- */
+
+const $ = id => document.getElementById(id);
+
+const filters = $("filters");
+const grid = $("grid");
+const search = $("search");
+const status = $("liveStatus");
+const empty = $("empty");
+
+let categories = [];
+let activeCategory = "All";
+
+$("year").textContent = new Date().getFullYear();
+
+/* ---------------------------------------------------------
+   GENERAL HELPERS
+--------------------------------------------------------- */
+
+function escapeHTML(value) {
+  return String(value ?? "").replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  })[char]);
 }
-function normalizeHeader(s){return String(s||"").trim().toLowerCase().replace(/[^a-z0-9]+/g," ");}
-function valueOf(obj,...keys){
-  for(const key of keys){const v=obj[key];if(v!==undefined&&String(v).trim()!=="")return String(v).trim();}
+
+function normalize(value) {
+  return String(value ?? "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function getMeta(sheetName) {
+  const normalizedName = normalize(sheetName);
+
+  const key = Object.keys(META).find(
+    name => normalize(name) === normalizedName
+  );
+
+  return META[key] || {
+    icon: "📂",
+    tint: "#edf1ff",
+    desc: "Topics and resources from this worksheet."
+  };
+}
+
+function getField(record, names) {
+  for (const name of names) {
+    const normalizedName = normalize(name);
+
+    const key = Object.keys(record).find(
+      existing => normalize(existing) === normalizedName
+    );
+
+    if (key && String(record[key] ?? "").trim() !== "") {
+      return String(record[key]).trim();
+    }
+  }
+
   return "";
 }
-function makeLiveDirectory(rows){
-  if(!rows||rows.length<2)throw new Error("The published sheet did not return any data rows.");
-  const headers=rows[0].map(normalizeHeader);
-  const records=rows.slice(1).map(row=>{
-    const o={};headers.forEach((h,i)=>{if(h)o[h]=String(row[i]??"").trim();});return o;
-  }).filter(o=>Object.values(o).some(v=>v));
-  if(!records.length)throw new Error("No populated rows were found in the published sheet.");
-  const next={};
-  for(const r of records){
-    const main=valueOf(r,"main category","category")||"Other";
-    const sub=valueOf(r,"subcategory","sub category","service type","topic");
-    const service=valueOf(r,"service name");
-    const title=sub||service;
-    if(!title)continue;
-    if(!next[main])next[main]=[];
-    const item={
-      title,
-      sheet:main,
-      location:valueOf(r,"location category","city district","city","district"),
-      "Service Name":service,
-      "Phone Number":valueOf(r,"phone number","phone"),
-      "Alternate Number":valueOf(r,"alternate number","alternate phone"),
-      "City / District":valueOf(r,"city district","city","district"),
-      Address:valueOf(r,"address"),
-      "Map Link":valueOf(r,"map link"),
-      "Website / Booking Link":valueOf(r,"website booking link","website","booking link"),
-      "Opening Hours":valueOf(r,"opening hours","hours"),
-      Source:valueOf(r,"source"),
-      "Updated On":valueOf(r,"updated on"),
-      Notes:valueOf(r,"notes"),
-      serviceType:valueOf(r,"service type")
-    };
-    // Retain distinct providers listed under the same subcategory.
-    if(service && service.toLowerCase()!==title.toLowerCase()) item.title=service;
-    next[main].push(item);
-  }
-  if(!Object.keys(next).length)throw new Error("Could not identify category and subcategory columns in the published sheet.");
-  for(const key of Object.keys(DIRECTORY))delete DIRECTORY[key];
-  Object.assign(DIRECTORY,next);
-  entries=Object.entries(DIRECTORY);
-  allTopics=entries.reduce((n,[,items])=>n+items.length,0);
-  document.getElementById("categoryCount").textContent=entries.length;
-  document.getElementById("topicCount").textContent=allTopics;
-}
-async function loadPublishedSheet(){
-  const status=document.getElementById("liveStatus");
-  try{
-    const url=PUBLISHED_SHEET_URL+(PUBLISHED_SHEET_URL.includes("?")?"&":"?")+"_="+Date.now();
-    const response=await fetch(url,{cache:"no-store"});
-    if(!response.ok)throw new Error("Google Sheets returned HTTP "+response.status);
-    const csv=await response.text();
-    if(csv.trim().startsWith("<!DOCTYPE")||csv.trim().startsWith("<html"))throw new Error("Google returned a web page instead of CSV. Check that the sheet is published.");
-    makeLiveDirectory(parseCSV(csv));
-    active="All";makeFilters();render();
-    status.textContent="● Live from Google Sheets";
-    status.className="live-status online";
-  }catch(err){
-    console.warn("Live Google Sheets load failed:",err);
-    status.textContent="● Showing built-in data · live sheet unavailable";
-    status.className="live-status offline";
-    makeFilters();render();
-  }
-}
-makeFilters();render();loadPublishedSheet();
-};filters.appendChild(b);
- });
-}
-function itemDetails(item){
- const fields=[["Service name",item["Service Name"]],["Phone",item["Phone Number"]],["Alternate phone",item["Alternate Number"]],["Location",item.location||item["City / District"]],["Address",item.Address],["Hours",item["Opening Hours"]],["Notes",item.Notes]];
- let out=fields.filter(([k,v])=>v).map(([k,v])=>`<p><strong>${clean(k)}:</strong> ${clean(v)}</p>`).join("");
- const phone=item["Phone Number"];
- if(phone) out+=`<a href="tel:${clean(String(phone).replace(/[^\d+]/g,""))}">☎ Call</a>`;
- if(item["Map Link"])out+=`<a href="${clean(item["Map Link"])}" target="_blank" rel="noopener">↗ Open map</a>`;
- if(item["Website / Booking Link"])out+=`<a href="${clean(item["Website / Booking Link"])}" target="_blank" rel="noopener">↗ Website / booking</a>`;
- if(item["Source"])out+=`<p>Source: ${clean(item["Source"])}</p>`;
- if(item["Updated On"])out+=`<p>Updated: ${clean(item["Updated On"])}</p>`;
- if(!out)out='<p>Topic listed in the workbook. Contact details and links have not yet been added.</p>';
- return out;
-}
-function render(){
- const q=search.value.trim().toLowerCase();grid.innerHTML="";
- let shown=0,matched=0;
- for(const [key,items] of entries){
-  if(active!=="All"&&key!==active)continue;
-  const matches=items.filter(it=>([key,it.title,it.sheet,it.location,...Object.values(it)].filter(Boolean).join(" ")).toLowerCase().includes(q));
-  if(!matches.length)continue;
-  matched+=matches.length;shown++;
-  const meta=META[key]||{icon:"📂",tint:"#edf1ff",desc:"Useful topics and resources."};
-  const card=document.createElement("section");card.className="category";
-  card.innerHTML=`<div class="cathead"><div class="caticon" style="--tint:${meta.tint}">${meta.icon}</div><div><h3>${clean(meta.label||key)}</h3><p>${clean(meta.desc)}</p></div><span class="count">${matches.length}</span></div><div class="items">${matches.map((it,i)=>`<details class="item"><summary>${clean(it.title)}</summary><div class="itembody">${itemDetails(it)}</div></details>`).join("")}</div>`;
-  grid.appendChild(card);
- }
- document.getElementById("empty").style.display=shown?"none":"block";
- document.getElementById("resultText").textContent=q?`${matched} matching topic${matched===1?"":"s"} across ${shown} categor${shown===1?"y":"ies"}.`:`${matched} topics across ${shown} categories.`;
-}
-search.addEventListener("input",render);
-document.addEventListener("keydown",e=>{if(e.key==="/"&&!["INPUT","TEXTAREA"].includes(document.activeElement.tagName)){e.preventDefault();search.focus()}if(e.key==="Escape"){search.value="";render();search.blur()}});
-const topbtn=document.getElementById("topbtn");window.addEventListener("scroll",()=>topbtn.classList.toggle("show",window.scrollY>450));topbtn.onclick=()=>window.scrollTo({top:0,behavior:"smooth"});
 
-// LIVE GOOGLE SHEETS DATA
-// Published Google Sheet CSV endpoint. Keep the sheet published for read access.
-const PUBLISHED_SHEET_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQuNNBgqHDjnnzWRAdVZF61-eB9exwadGqMPwxU12EJgGcQMC7Kk8sUZx4mgHIL5Leb4vGlZboetfLz/pub?output=csv";
+function firstNonEmpty(values) {
+  return values.find(value => String(value ?? "").trim() !== "") || "";
+}
 
-function parseCSV(text){
-  const rows=[]; let row=[], cell="", quoted=false;
-  for(let i=0;i<text.length;i++){
-    const c=text[i], next=text[i+1];
-    if(c==='"' && quoted && next==='"'){cell+='"';i++;}
-    else if(c==='"'){quoted=!quoted;}
-    else if(c===','&&!quoted){row.push(cell);cell="";}
-    else if((c==='\n'||c==='\r')&&!quoted){
-      if(c==='\r'&&next==='\n')i++;
-      row.push(cell); if(row.some(v=>String(v).trim()!==""))rows.push(row);
-      row=[];cell="";
-    } else cell+=c;
-  }
-  if(cell.length||row.length){row.push(cell);rows.push(row);}
-  return rows;
-}
-function normalizeHeader(s){return String(s||"").trim().toLowerCase().replace(/[^a-z0-9]+/g," ");}
-function valueOf(obj,...keys){
-  for(const key of keys){const v=obj[key];if(v!==undefined&&String(v).trim()!=="")return String(v).trim();}
-  return "";
-}
-function makeLiveDirectory(rows){
-  if(!rows||rows.length<2)throw new Error("The published sheet did not return any data rows.");
-  const headers=rows[0].map(normalizeHeader);
-  const records=rows.slice(1).map(row=>{
-    const o={};headers.forEach((h,i)=>{if(h)o[h]=String(row[i]??"").trim();});return o;
-  }).filter(o=>Object.values(o).some(v=>v));
-  if(!records.length)throw new Error("No populated rows were found in the published sheet.");
-  const next={};
-  for(const r of records){
-    const main=valueOf(r,"main category","category")||"Other";
-    const sub=valueOf(r,"subcategory","sub category","service type","topic");
-    const service=valueOf(r,"service name");
-    const title=sub||service;
-    if(!title)continue;
-    if(!next[main])next[main]=[];
-    const item={
-      title,
-      sheet:main,
-      location:valueOf(r,"location category","city district","city","district"),
-      "Service Name":service,
-      "Phone Number":valueOf(r,"phone number","phone"),
-      "Alternate Number":valueOf(r,"alternate number","alternate phone"),
-      "City / District":valueOf(r,"city district","city","district"),
-      Address:valueOf(r,"address"),
-      "Map Link":valueOf(r,"map link"),
-      "Website / Booking Link":valueOf(r,"website booking link","website","booking link"),
-      "Opening Hours":valueOf(r,"opening hours","hours"),
-      Source:valueOf(r,"source"),
-      "Updated On":valueOf(r,"updated on"),
-      Notes:valueOf(r,"notes"),
-      serviceType:valueOf(r,"service type")
-    };
-    // Retain distinct providers listed under the same subcategory.
-    if(service && service.toLowerCase()!==title.toLowerCase()) item.title=service;
-    next[main].push(item);
-  }
-  if(!Object.keys(next).length)throw new Error("Could not identify category and subcategory columns in the published sheet.");
-  for(const key of Object.keys(DIRECTORY))delete DIRECTORY[key];
-  Object.assign(DIRECTORY,next);
-  entries=Object.entries(DIRECTORY);
-  allTopics=entries.reduce((n,[,items])=>n+items.length,0);
-  document.getElementById("categoryCount").textContent=entries.length;
-  document.getElementById("topicCount").textContent=allTopics;
-}
-async function loadPublishedSheet(){
-  const status=document.getElementById("liveStatus");
-  try{
-    const url=PUBLISHED_SHEET_URL+(PUBLISHED_SHEET_URL.includes("?")?"&":"?")+"_="+Date.now();
-    const response=await fetch(url,{cache:"no-store"});
-    if(!response.ok)throw new Error("Google Sheets returned HTTP "+response.status);
-    const csv=await response.text();
-    if(csv.trim().startsWith("<!DOCTYPE")||csv.trim().startsWith("<html"))throw new Error("Google returned a web page instead of CSV. Check that the sheet is published.");
-    makeLiveDirectory(parseCSV(csv));
-    active="All";makeFilters();render();
-    status.textContent="● Live from Google Sheets";
-    status.className="live-status online";
-  }catch(err){
-    console.warn("Live Google Sheets load failed:",err);
-    status.textContent="● Showing built-in data · live sheet unavailable";
-    status.className="live-status offline";
-    makeFilters();render();
-  }
-}
-makeFilters();render();loadPublishedSheet();
+/* ---------------------------------------------------------
+   CONVERT API RESPONSE TO DIRECTORY DATA
 
+   API structure:
+   {
+     success: true,
+     workbookName: "...",
+     totalWorksheets: 10,
+     sheets: [
+       {
+         sheetName: "...",
+         headers: ["Category", "Name", ...],
+         rows: [["...", "...", ...]]
+       }
+     ]
+   }
+--------------------------------------------------------- */
+
+function buildDirectory(workbook) {
+  if (!workbook || !Array.isArray(workbook.sheets)) {
+    throw new Error("The API response does not contain worksheet data.");
+  }
+
+  const result = [];
+
+  workbook.sheets.forEach(sheet => {
+    const sheetName = String(sheet.sheetName || "Other").trim();
+    const headers = Array.isArray(sheet.headers) ? sheet.headers : [];
+    const rows = Array.isArray(sheet.rows) ? sheet.rows : [];
+
+    const items = [];
+
+    rows.forEach((row, rowIndex) => {
+      const record = {};
+
+      headers.forEach((header, columnIndex) => {
+        const label = String(header || `Column ${columnIndex + 1}`).trim();
+        record[label] = String(row[columnIndex] ?? "").trim();
+      });
+
+      if (!Object.values(record).some(value => value !== "")) {
+        return;
+      }
+
+      /*
+       * Use a descriptive column as the expandable title.
+       * If none exists, use the first populated cell.
+       */
+      const title = getField(record, [
+        "Service Name",
+        "Provider Name",
+        "Business Name",
+        "Hospital Name",
+        "Contact Name",
+        "Subcategory",
+        "Sub Category",
+        "Service Type",
+        "Service",
+        "Topic",
+        "Title",
+        "Name",
+        "Category"
+      ]) || firstNonEmpty(Object.values(record)) ||
+        `Entry ${rowIndex + 1}`;
+
+      items.push({
+        title,
+        record,
+        sheetName
+      });
+    });
+
+    if (items.length) {
+      result.push({
+        key: sheetName,
+        items
+      });
+    }
+  });
+
+  if (!result.length) {
+    throw new Error("No populated worksheet records were found.");
+  }
+
+  categories = result;
+
+  const topicCount = categories.reduce(
+    (total, category) => total + category.items.length,
+    0
+  );
+
+  $("categoryCount").textContent = categories.length;
+  $("topicCount").textContent = topicCount;
+}
+
+/* ---------------------------------------------------------
+   CATEGORY FILTER BUTTONS
+--------------------------------------------------------- */
+
+function makeFilters() {
+  filters.innerHTML = "";
+
+  const keys = ["All", ...categories.map(category => category.key)];
+
+  keys.forEach(key => {
+    const button = document.createElement("button");
+
+    button.type = "button";
+    button.className =
+      "filter" + (activeCategory === key ? " active" : "");
+
+    button.textContent = key === "All"
+      ? "All categories"
+      : (getMeta(key).label || key);
+
+    button.setAttribute(
+      "aria-pressed",
+      String(activeCategory === key)
+    );
+
+    button.addEventListener("click", () => {
+      activeCategory = key;
+      makeFilters();
+      render();
+    });
+
+    filters.appendChild(button);
+  });
+}
+
+/* ---------------------------------------------------------
+   SAFE CLICKABLE LINKS
+
+   URLs are only linked when they use HTTP or HTTPS.
+   Phone numbers and email addresses are handled separately.
+--------------------------------------------------------- */
+
+function renderField(label, value) {
+  const text = String(value ?? "").trim();
+
+  if (!text) return "";
+
+  const labelNormalized = normalize(label);
+  const valueIsURL = /^https?:\/\//i.test(text);
+
+  const isURLField =
+    /url|website|booking|map link|google maps|web link|portal link|official site/
+      .test(labelNormalized);
+
+  if (valueIsURL || isURLField) {
+    try {
+      const url = new URL(text);
+
+      if (url.protocol === "https:" || url.protocol === "http:") {
+        return `
+          <p><strong>${escapeHTML(label)}:</strong></p>
+          <a href="${escapeHTML(url.href)}"
+             target="_blank"
+             rel="noopener noreferrer">
+            ↗ ${escapeHTML(label)}
+          </a>
+        `;
+      }
+    } catch (_) {
+      // Show non-URL text normally.
+    }
+  }
+
+  const isPhoneField =
+    /phone|mobile|telephone|contact number|helpline number/
+      .test(labelNormalized);
+
+  if (isPhoneField && /^[+\d\s().-]+$/.test(text)) {
+    const phone = text.replace(/[^\d+]/g, "");
+
+    return `
+      <p><strong>${escapeHTML(label)}:</strong>
+      ${escapeHTML(text)}</p>
+      <a href="tel:${escapeHTML(phone)}">☎ Call</a>
+    `;
+  }
+
+  if (
+    /email/.test(labelNormalized) &&
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text)
+  ) {
+    return `
+      <p><strong>${escapeHTML(label)}:</strong>
+      ${escapeHTML(text)}</p>
+      <a href="mailto:${escapeHTML(text)}">✉ Email</a>
+    `;
+  }
+
+  return `
+    <p><strong>${escapeHTML(label)}:</strong>
+    ${escapeHTML(text)}</p>
+  `;
+}
+
+/* ---------------------------------------------------------
+   EXPANDABLE ITEM DETAILS
+
+   Display all populated columns from the spreadsheet row.
+--------------------------------------------------------- */
+
+function itemDetails(item) {
+  const record = item.record;
+
+  const content = Object.entries(record)
+    .filter(([label, value]) => {
+      if (!String(value ?? "").trim()) return false;
+
+      // Avoid repeating the same value as the item heading.
+      return String(value).trim() !== item.title ||
+        normalize(label) === "service name";
+    })
+    .map(([label, value]) => renderField(label, value))
+    .join("");
+
+  return content || "<p>No additional details are available.</p>";
+}
+
+/* ---------------------------------------------------------
+   RENDER DIRECTORY
+--------------------------------------------------------- */
+
+function render() {
+  const query = search.value.trim().toLowerCase();
+
+  grid.innerHTML = "";
+
+  let visibleCategories = 0;
+  let visibleTopics = 0;
+
+  categories.forEach(category => {
+    if (
+      activeCategory !== "All" &&
+      activeCategory !== category.key
+    ) {
+      return;
+    }
+
+    const matchingItems = category.items.filter(item => {
+      const searchableText = [
+        category.key,
+        item.title,
+        item.sheetName,
+        ...Object.entries(item.record).flat()
+      ].join(" ").toLowerCase();
+
+      return searchableText.includes(query);
+    });
+
+    if (!matchingItems.length) return;
+
+    visibleCategories++;
+    visibleTopics += matchingItems.length;
+
+    const meta = getMeta(category.key);
+
+    const card = document.createElement("section");
+    card.className = "category";
+
+    const heading = document.createElement("div");
+    heading.className = "cathead";
+
+    const icon = document.createElement("div");
+    icon.className = "caticon";
+    icon.style.setProperty("--tint", meta.tint);
+    icon.textContent = meta.icon;
+    icon.setAttribute("aria-hidden", "true");
+
+    const headingText = document.createElement("div");
+
+    const title = document.createElement("h3");
+    title.textContent = meta.label || category.key;
+
+    const description = document.createElement("p");
+    description.textContent = meta.desc;
+
+    headingText.append(title, description);
+
+    const count = document.createElement("span");
+    count.className = "count";
+    count.textContent = matchingItems.length;
+
+    heading.append(icon, headingText, count);
+    card.appendChild(heading);
+
+    const itemList = document.createElement("div");
+    itemList.className = "items";
+
+    matchingItems.forEach(item => {
+      const details = document.createElement("details");
+      details.className = "item";
+
+      const summary = document.createElement("summary");
+      summary.textContent = item.title;
+
+      const body = document.createElement("div");
+      body.className = "itembody";
+      body.innerHTML = itemDetails(item);
+
+      details.append(summary, body);
+      itemList.appendChild(details);
+    });
+
+    card.appendChild(itemList);
+    grid.appendChild(card);
+  });
+
+  empty.style.display = visibleCategories ? "none" : "block";
+
+  $("resultText").textContent = query
+    ? `${visibleTopics} matching topics across ${visibleCategories} categories.`
+    : `${visibleTopics} topics across ${visibleCategories} categories.`;
+
+  if (!visibleCategories && categories.length) {
+    empty.innerHTML =
+      "<strong>No matching topics found</strong>" +
+      "Try another keyword or choose a different category.";
+  }
+}
+
+/* ---------------------------------------------------------
+   LOAD ALL WORKSHEETS FROM GOOGLE APPS SCRIPT
+--------------------------------------------------------- */
+
+async function loadWorkbook() {
+  status.textContent = "↻ Connecting to Google Sheets…";
+  status.className = "live-status";
+
+  try {
+    const response = await fetch(API_URL, {
+      method: "GET",
+      cache: "no-store"
+    });
+
+    if (!response.ok) {
+      throw new Error(`API returned HTTP ${response.status}.`);
+    }
+
+    const workbook = await response.json();
+
+    if (workbook.success === false) {
+      throw new Error(
+        workbook.error || "Google Apps Script returned an error."
+      );
+    }
+
+    buildDirectory(workbook);
+
+    activeCategory = "All";
+    makeFilters();
+    render();
+
+    const sheetCount = workbook.totalWorksheets ?? categories.length;
+
+    status.textContent = `● Live · ${sheetCount} worksheets`;
+    status.className = "live-status online";
+
+    console.info("NV Quick Help workbook loaded:", workbook.workbookName);
+    console.info("Worksheets loaded:", categories.length);
+
+  } catch (error) {
+    console.error("NV Quick Help loading error:", error);
+
+    status.textContent = "● Unable to load spreadsheet";
+    status.className = "live-status offline";
+
+    grid.innerHTML = "";
+    filters.innerHTML = "";
+
+    empty.style.display = "block";
+    empty.innerHTML =
+      "<strong>Unable to load your directory</strong>" +
+      "Please check your Apps Script deployment and browser console. " +
+      "The API must return accessible JSON.";
+
+    $("resultText").textContent =
+      "Spreadsheet data could not be loaded.";
+  }
+}
+
+/* ---------------------------------------------------------
+   SEARCH, KEYBOARD SHORTCUTS AND BACK TO TOP
+--------------------------------------------------------- */
+
+search.addEventListener("input", render);
+
+document.addEventListener("keydown", event => {
+  if (
+    event.key === "/" &&
+    !["INPUT", "TEXTAREA"].includes(
+      document.activeElement.tagName
+    )
+  ) {
+    event.preventDefault();
+    search.focus();
+  }
+
+  if (event.key === "Escape") {
+    search.value = "";
+    render();
+    search.blur();
+  }
+});
+
+const topButton = $("topbtn");
+
+window.addEventListener("scroll", () => {
+  topButton.classList.toggle("show", window.scrollY > 450);
+});
+
+topButton.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+/* ---------------------------------------------------------
+   INITIALIZE
+--------------------------------------------------------- */
+
+loadWorkbook();
 </script>
+
 </body>
 </html>
